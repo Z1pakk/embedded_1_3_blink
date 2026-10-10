@@ -1,18 +1,22 @@
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+// Визначаємо цифровий пін, до якого підключимо зовнішній світлодіод.
+// Суфікс _OUT одразу підказує, що цей пін працює на вихід.
+// #define LED_OUT 15
+constexpr uint8_t LED_OUT = 15;
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+    // Налаштовуємо пін як вихід (OUTPUT), щоб контролер міг подавати на нього напругу
+    pinMode(LED_OUT, OUTPUT);
+    Serial.begin(115200);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+    digitalWrite(LED_OUT, HIGH); // Вмикаємо світлодіод (подаємо 3.3 В)
+    Serial.println("On");
+    delay(1000);                 // Чекаємо 1 секунду (1000 мілісекунд)
+    
+    digitalWrite(LED_OUT, LOW);  // Вимикаємо світлодіод (подаємо 0 В)
+    Serial.println("Off");
+    delay(1000);                 // Чекаємо 1 секунду
 }
