@@ -25,7 +25,7 @@ void loop() {
 void alternateLedSlowly(uint8_t ledPin) {
     constexpr uint16_t ALTERNATE_DELAY_MS {1000};
 
-    pinMode(ledPin, OFF_STATE); // switch pin back to output mode to turn on leds
+    pinMode(ledPin, ON_STATE); // switch pin back to output mode to turn on leds
 
     digitalWrite(ledPin, LED_RED_STATE);
     delay(ALTERNATE_DELAY_MS);
@@ -33,6 +33,6 @@ void alternateLedSlowly(uint8_t ledPin) {
     digitalWrite(ledPin, LED_BLUE_STATE);
     delay(ALTERNATE_DELAY_MS);
 
-    pinMode(ledPin, ON_STATE); // switch pin to input mode to turn off leds
+    pinMode(ledPin, OFF_STATE); // switch pin to input mode to turn off leds
     delay(ALTERNATE_DELAY_MS);
 }
