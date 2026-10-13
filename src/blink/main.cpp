@@ -1,7 +1,5 @@
 #include <Arduino.h>
 
-void alternateLedSlowly(uint8_t pin);
-
 // Визначаємо цифровий пін, до якого підключимо зовнішній світлодіод.
 // Суфікс _OUT одразу підказує, що цей пін працює на вихід.
 // #define LED_OUT 15
@@ -30,8 +28,4 @@ void loop() {
     Serial.println("Blue On");
 
     delay(1000);                 // Чекаємо 1 секунду
-}
-
-void alternateLedSlowly(uint8_t pin) {
-    
 }
